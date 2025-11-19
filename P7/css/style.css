@@ -1,0 +1,72 @@
+* {
+
+.hero {
+text-align: center;
+padding: 80px 20px;
+background: #f39c12;
+color: white;
+}
+
+
+.hero button {
+padding: 10px 20px;
+background: #e67e22;
+border: none;
+color: white;
+cursor: pointer;
+border-radius: 5px;
+font-size: 16px;
+}
+
+
+.produk-section {
+padding: 40px 20px;
+text-align: center;
+}
+
+
+.produk-list {
+display: flex;
+justify-content: center;
+gap: 20px;
+flex-wrap: wrap;
+}
+
+
+.card {
+background: white;
+padding: 15px;
+border-radius: 10px;
+width: 220px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+.card img {
+width: 100%;
+border-radius: 8px;
+}
+
+
+.card span {
+display: block;
+margin-top: 10px;
+font-weight: bold;
+color: #d35400;
+}
+
+
+.tentang-section, .kontak-section {
+padding: 40px 20px;
+text-align: center;
+background: #f8f8f8;
+}
+
+
+footer {
+text-align: center;
+background: #d35400;
+color: white;
+padding: 15px;
+margin-top: 20px;
+}
