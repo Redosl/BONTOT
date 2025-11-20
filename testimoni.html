@@ -53,16 +53,17 @@
             return;
         }
 
-        const url = "https://script.google.com/macros/s/AKfycbzxQBKFhatVduWRJcPUwo1ofqzEVja3TVfFr7E3jKnPHFkyeR7bVxNJ6UMe3fLm4P51Zg/exec";
+        const url = "https://script.google.com/macros/s/AKfycbwYlVhf661wncACKC-Hcjk56ey-VDPimAcFD10HEhF6nK9EJaMNpCGo9g6gLOYM98_qwg/exec";
 
         try {
-           await fetch(url, {
-            method: "POST",
-            mode: "no-cors",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ name, comment })
+            await fetch(url, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({ name, comment })
             });
-
+            
             form.innerHTML = `
                 <p>Terima kasih sudah mengisi testimoni!</p>
                 <h4><a href="testimoni.html" class="back-button">Kembali</a></h4>
@@ -89,6 +90,7 @@
 
 </body>
 </html>
+
 
 
 
