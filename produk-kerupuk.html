@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detail Kerupuk Bontot</title>
-    <link rel="stylesheet" href="assests/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -35,12 +36,12 @@
             <h3>Cara Pembuatan</h3>
             <p>1. Campurkan daging ikan giling, bawang putih halus, garam, dan penyedap rasa. Aduk hingga rata.</p>
             <p>2. Masukkan tepung tapioka ke dalam campuran ikan. Tuangkan air panas sedikit demi sedikit sambil diuleni hingga adonan menjadi kalis dan bisa dibentuk memanjang (lonjoran).</p>
-            <p>3. Bentuk adonan menjadi silinder. Kukus adonan Bontot selama **20 - 30 menit** hingga matang sempurna dan kenyal.</p>
-            <p>4. Angkat Bontot yang sudah matang. **Sangat penting** untuk mendinginkannya secara total, idealnya simpan di kulkas semalam, agar adonan mengeras dan mudah diiris.</p>
+            <p>3. Bentuk adonan menjadi silinder. Kukus adonan Bontot selama 20 - 30 menit hingga matang sempurna dan kenyal.</p>
+            <p>4. Angkat Bontot yang sudah matang kemudidian dinginkan secara total, idealnya simpan di kulkas semalam, agar adonan mengeras dan mudah diiris.</p>
             <p>5. Setelah Bontot dingin dan keras, iris setipis mungkin menggunakan pisau tajam atau alat pengiris (slicer). Semakin tipis, semakin renyah hasilnya.</p>
             <p>6. Tata irisan Bontot di atas nampan dan jemur di bawah sinar matahari selama **2-3 hari** hingga benar-benar kering dan kaku (tidak ada sisa kadar air).</p>
             <p>7. Panaskan minyak goreng dalam jumlah banyak hingga panasnya maksimal.</p>
-            <p>8. kerupuk Bontot mentah yang sudah kering ke dalam minyak panas. Kerupuk harus mengembang dengan cepat.</p>
+            <p>8. Kerupuk Bontot mentah yang sudah kering ke dalam minyak panas. Kerupuk harus mengembang dengan cepat.</p>
             <p>9. Angkat, tiriskan minyak, dan simpan dalam wadah kedap udara setelah Kerupuk Bontot dingin.</p>
             ----------------------------------------------------
             <h3>Info Gizi</h3>
@@ -55,8 +56,24 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 </p>
+        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN1TRA </p>
     </footer>
     <script src="assests/js/script.js"></script>
 </body>
+
+    <!-- TARO YANG INI DI SINI -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const currentPage = window.location.pathname.split("/").pop(); 
+            const links = document.querySelectorAll("nav ul li a");
+
+            links.forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+
 </html>
