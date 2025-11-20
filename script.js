@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (name && comment) {
                 // Kirim data ke Google Sheets via POST
-                fetch('https://script.google.com/macros/s/AKfycbyWIQZ2mqttA_r1gXQALaZ25zrylC-WxaWH1CvaxFoPKVhVlwxWka2nIxmp9F8l5DI9hw/exec', {  // GANTI DENGAN URL WEB APP KAMU (dari Langkah 1)
+                fetch('https://script.google.com/macros/s/AKfycbxbXgAVfpaxXggGhRqsjvmOzOAC2HTCpCNzf13XJ2GxzxhsI0w-xruB21tfntqAbUV1lw/exec', {  // GANTI DENGAN URL WEB APP KAMU (dari Langkah 1)
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
