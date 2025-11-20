@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bontot - Makanan Khas Banten</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">Aneka Olahan Bontot</div>
+            <div class="logo"><strong> K2XI3 </strong></div>
             <ul>
                 <li><a href="index.html">Beranda</a></li>
                 <li><a href="produk.html">Produk</a></li>
@@ -20,17 +21,38 @@
     </header>
     <main>
         <section class="hero">
-            <h1>Bontot – Makanan Khas Banten</h1>
-            <img src="assets/img/download.jpg" alt="Bontot" class="hero-img">
-            <p>Bontot adalah makanan khas Banten berbahan dasar ikan tenggiri, punya tekstur kenyal dan rasa gurih yang bikin nagih. Di sini, kami mengenalkan kembali kuliner lokal yang mulai jarang ditemui—dengan kemasan modern dan kualitas terjaga.</p>
+            <h1>  𓆩༺✧༻𓆪 </h1>
+            <h1>Bontot</h1>
+            <h1>Makanan Khas Banten</h1>
+            <h1>∘₊✧─────────────✧₊∘</h1>
+            <img src="assests/img/download.jpg" alt="Bontot" class="hero-img">
+            <p>Bontot adalah makanan khas Banten berbahan dasar ikan tenggiri, punya tekstur kenyal dan rasa gurih yang bikin nagih. Di sini, kami mengenalkan kembali kuliner lokal yang mulai jarang ditemui dengan kemasan modern dan kualitas terjaga.</p>
+            <h2>------------------</h2>
             <a href="produk.html" class="cta-button">Lihat Produk</a>
+            <h2>------------------</h2>
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 Kokurikuler Bontot. Semua hak dilindungi.</p>
+        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN1TRA </p>
     </footer>
-    <script src="script.js"></script>
+    <script src="assests/js/script.js"></script>
 </body>
 
+    <!-- TARO YANG INI DI SINI -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const currentPage = window.location.pathname.split("/").pop(); 
+            const links = document.querySelectorAll("nav ul li a");
+
+            links.forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+    
+</body>
 </html>
 
+</html>
