@@ -38,30 +38,20 @@
     </footer>
 
     <script>
-    const form = document.getElementById("testimonial-form");
+        const form = document.getElementById("testimonial-form");
 
-    form.addEventListener("submit", async (e) => {
-        e.preventDefault();
+        form.addEventListener("submit", (e) => {
+            e.preventDefault(); // mencegah reload halaman / kirim ke spreadsheet
 
-    const name = document.getElementById("name").value;
-    const comment = document.getElementById("comment").value;
+            const name = document.getElementById("name").value;
 
-    const url = "https://script.google.com/macros/s/AKfycbyMRS-wwlsgD_XjH6VHKpNEXVq_zjcd-qPQ2q6sUv-pzTW8Vl1rtfY1WLoYBIduXK-kAA/exec";
-
-    await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, comment })
-    });
-
-    form.innerHTML = `
-        <p>Terima kasih sudah mengisi testimoni!</p>
-        <h4><a href="testimoni.html" class="back-button">Kembali</a></h4>
-    `;
-    });
+            // Ganti form dengan pesan sukses
+            form.innerHTML = `
+            <p>Terima kasih sudah mengisi testimoni!</p>
+            <h4><a href="testimoni.html" class="back-button">Kembali</a></h4>
+            `;
+        });
     </script>
-
-
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
