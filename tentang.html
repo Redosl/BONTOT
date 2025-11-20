@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assests/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><strong> K2XI3 </strong></div>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="testimoni.html">Testimoni</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="about">
+            <img src="assests/img/kelompok.jpg" alt="Tim Kami" class="about-img">
+
+            <h2>Tentang Kami</h2>
+            <p>Website ini dibuat sebagai proyek kokurikuler untuk mengangkat kembali kuliner khas Banten, khususnya bontot, yang mulai jarang dikenal generasi muda. Kami ingin menunjukkan bahwa makanan tradisional tetap relevan bila dikemas dengan cara yang modern.</p>
+            <p> -</p>
+            <p>Tujuan kami adalah melestarikan kuliner lokal sekaligus membantu UMKM berkembang lewat digital marketing. Proyek ini menjadi ruang belajar untuk menggabungkan teknologi, kreativitas, dan kepedulian budaya agar produk lokal bisa dikenal lebih luas.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN1TRA </p>
+    </footer>
+    <script src="assests/js/script.js"></script>
+</body>
+
+    <!-- TARO YANG INI DI SINI -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const currentPage = window.location.pathname.split("/").pop(); 
+            const links = document.querySelectorAll("nav ul li a");
+
+            links.forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+</html>
