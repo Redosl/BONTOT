@@ -1,24 +1,70 @@
-<script>
-const form = document.getElementById("testimonial-form");
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimoni</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><strong>K2XI3</strong></div>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="testimoni.html">Testimoni</a></li>
+            </ul>
+        </nav>
+    </header>
 
-form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+    <main>
+        <section class="testimonials">
+            <h2>Testimoni</h2>
+            <form id="testimonial-form">
+                <label for="name">Nama:</label>
+                <input type="text" id="name" required>
+                <label for="comment">Komentar:</label>
+                <textarea id="comment" required></textarea>
+                <button type="submit">Kirim</button>
+            </form>
+        </section>
+    </main>
 
-    const name = document.getElementById("name").value;
-    const comment = document.getElementById("comment").value;
+    <footer>
+        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN1TRA</p>
+    </footer>
 
-    const url = "https://script.google.com/macros/s/AKfycbyMRS-wwlsgD_XjH6VHKpNEXVq_zjcd-qPQ2q6sUv-pzTW8Vl1rtfY1WLoYBIduXK-kAA/exec";
+    <script>
+        const form = document.getElementById("testimonial-form");
 
-    await fetch(url, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, comment })
-    });
+        form.addEventListener("submit", (e) => {
+            e.preventDefault(); // mencegah reload halaman / kirim ke spreadsheet
 
-    form.innerHTML = `
-        <p>Terima kasih sudah mengisi testimoni!</p>
-        <h4><a href="testimoni.html" class="back-button">Kembali</a></h4>
-    `;
-});
-</script>
+            const name = document.getElementById("name").value;
 
+            // Ganti form dengan pesan sukses
+            form.innerHTML = `
+            <p>Terima kasih sudah mengisi testimoni!</p>
+            <h4><a href="testimoni.html" class="back-button">Kembali</a></h4>
+            `;
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const currentPage = window.location.pathname.split("/").pop(); 
+            const links = document.querySelectorAll("nav ul li a");
+
+            links.forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
