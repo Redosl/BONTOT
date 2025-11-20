@@ -10,7 +10,7 @@
 <body>
     <header>
         <nav>
-            <div class="logo"><strong> K2XI3 </strong></div>
+            <div class="logo"><strong>K2XI3</strong></div>
             <ul>
                 <li><a href="index.html">Beranda</a></li>
                 <li><a href="produk.html">Produk</a></li>
@@ -19,6 +19,7 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <section class="testimonials">
             <h2>Testimoni</h2>
@@ -29,28 +30,24 @@
                 <textarea id="comment" required></textarea>
                 <button type="submit">Kirim</button>
             </form>
-            <div id="testimonial-list">
-            </div>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN1TRA </p>
+        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN1TRA</p>
     </footer>
-    <script src="script.js"></script>
-</body>
 
-    <!-- TARO YANG INI DI SINI -->
     <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const currentPage = window.location.pathname.split("/").pop(); 
-            const links = document.querySelectorAll("nav ul li a");
+        const form = document.getElementById("testimonial-form");
 
-            links.forEach(link => {
-                if (link.getAttribute("href") === currentPage) {
-                    link.classList.add("active");
-                }
-            });
+        form.addEventListener("submit", (e) => {
+            e.preventDefault(); // mencegah reload halaman / kirim ke spreadsheet
+
+            const name = document.getElementById("name").value;
+
+            // Ganti form dengan pesan sukses
+            form.innerHTML = `<p>Terima kasih ${name} sudah mengisi testimoni!</p>`;
         });
     </script>
-
+</body>
 </html>
