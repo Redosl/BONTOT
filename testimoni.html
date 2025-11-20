@@ -26,8 +26,10 @@
             <form id="testimonial-form">
                 <label for="name">Nama:</label>
                 <input type="text" id="name" required>
+
                 <label for="comment">Komentar:</label>
                 <textarea id="comment" required></textarea>
+
                 <button type="submit">Kirim</button>
             </form>
         </section>
@@ -38,19 +40,37 @@
     </footer>
 
     <script>
-        const form = document.getElementById("testimonial-form");
+    const form = document.getElementById("testimonial-form");
 
-        form.addEventListener("submit", (e) => {
-            e.preventDefault(); // mencegah reload halaman / kirim ke spreadsheet
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-            const name = document.getElementById("name").value;
+        const name = document.getElementById("name").value.trim();
+        const comment = document.getElementById("comment").value.trim();
 
-            // Ganti form dengan pesan sukses
+        if (!name || !comment) {
+            alert("Nama dan komentar tidak boleh kosong!");
+            return;
+        }
+
+        const url = "https://script.google.com/macros/s/AKfycbyMRS-wwlsgD_XjH6VHKpNEXVq_zjcd-qPQ2q6sUv-pzTW8Vl1rtfY1WLoYBIduXK-kAA/exec";
+
+        try {
+            await fetch(url, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, comment })
+            });
+
             form.innerHTML = `
-            <p>Terima kasih sudah mengisi testimoni!</p>
-            <h4><a href="testimoni.html" class="back-button">Kembali</a></h4>
+                <p>Terima kasih sudah mengisi testimoni!</p>
+                <h4><a href="testimoni.html" class="back-button">Kembali</a></h4>
             `;
-        });
+        } catch (err) {
+            console.error(err);
+            alert("Gagal mengirim testimoni. Coba lagi.");
+        }
+    });
     </script>
 
     <script>
