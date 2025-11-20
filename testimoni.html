@@ -56,10 +56,11 @@
         const url = "https://script.google.com/macros/s/AKfycbzxuUVeSRAmrkjDy1lciUt6LTWQ2v0gV2IyJg4newXil2lML04_vJdggpGUyGLmtb15ww/exec";
 
         try {
-            await fetch(url, {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, comment })
+           await fetch(url, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, comment })
             });
 
             form.innerHTML = `
@@ -88,6 +89,7 @@
 
 </body>
 </html>
+
 
 
 
