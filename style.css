@@ -1,3 +1,6 @@
+/* ======================================
+   GLOBAL
+====================================== */
 * {
     margin: 0;
     padding: 0;
@@ -6,331 +9,189 @@
 }
 
 body {
-    background-color: #f4f6fb;
+    background: #f5f7ff;
     color: #333;
     line-height: 1.6;
-    padding-top: 80px;
-    padding-bottom: 80px;
-    overflow-x: hidden; /* fix HP geser kiri-kanan */
+    overflow-x: hidden;
 }
 
-/* ----------------------------------
-   COLOR SYSTEM
----------------------------------- */
-:root {
-    --primary: #0e5696;
-    --accent: #f39c12;
-    --danger: #e74c3c;
-    --success: #27ae60;
-    --dark: #2c3e50;
-    --light: #ffffff;
-    --shadow: 0 4px 12px rgba(0,0,0,0.08);
-    --radius: 10px;
-    --spacing: 1.5rem;
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
 }
 
-/* ----------------------------------
-   HEADER + NAV
----------------------------------- */
+/* ======================================
+   NAVBAR
+====================================== */
 header {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
-    background: var(--primary);
-    color: white;
-    padding: 1rem;
-    z-index: 1000;
-    box-shadow: var(--shadow);
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    z-index: 999;
 }
 
 nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
+nav .logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #3b5bff;
 }
 
-nav ul li {
-    margin-left: 1rem;
+nav ul {
+    display: flex;
+    gap: 25px;
+    list-style: none;
 }
 
 nav ul li a {
-    color: white;
     text-decoration: none;
-    padding: .3rem .5rem;
-    transition: 0.2s;
+    font-weight: 500;
+    color: #333;
+    transition: 0.3s;
 }
 
-nav ul li a:hover {
-    color: var(--accent);
-}
-
+nav ul li a:hover,
 nav ul li a.active {
-    color: var(--accent);
-    font-weight: 600;
-    border-bottom: 2px solid var(--accent);
+    color: #3b5bff;
 }
 
-/* ----------------------------------
-   MAIN WRAPPER
----------------------------------- */
+/* ======================================
+   MAIN CONTENT
+====================================== */
+
 main {
-    max-width: 1200px;
-    margin: auto;
-    padding: var(--spacing);
+    margin-top: 120px;
 }
 
-/* ----------------------------------
-   FOOTER
----------------------------------- */
-footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: var(--dark);
-    color: white;
+/* SECTION TITLE */
+.products h2 {
     text-align: center;
-    padding: 1rem;
-    z-index: 1000;
-    box-shadow: var(--shadow);
-}
-
-/* ----------------------------------
-   HERO
----------------------------------- */
-.hero {
-    text-align: center;
-    margin-bottom: 2.5rem;
-}
-
-.hero-img {
-    width: 100%;
-    max-width: 320px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin: 1rem auto;
-}
-
-.cta-button {
-    display: inline-block;
-    background: var(--danger);
-    color: white;
-    padding: 0.7rem 1.2rem;
-    border-radius: var(--radius);
-    text-decoration: none;
+    font-size: 2rem;
+    margin-bottom: 30px;
     font-weight: 600;
-    transition: 0.2s;
+    color: #222;
 }
 
-.cta-button:hover {
-    opacity: 0.85;
-}
-
-/* ----------------------------------
-   PRODUCT LIST
----------------------------------- */
-.products {
-    text-align: center;
-}
+/* ======================================
+   PRODUCT GRID
+====================================== */
 
 .product-grid {
+    max-width: 1150px;
+    margin: auto;
+    padding: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
 }
 
 .product-card {
-    background: var(--light);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    transition: 0.35s ease;
+    position: relative;
     overflow: hidden;
-    transition: 0.25s;
 }
 
 .product-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
 }
 
 .product-card img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 15px;
 }
 
 .product-card h3 {
-    padding: 1rem;
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 600;
+    margin-bottom: 10px;
 }
 
+.product-card p {
+    color: #555;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+/* BUTTON */
 .detail-button {
     display: inline-block;
-    background: var(--primary);
+    background: #3b5bff;
     color: white;
-    padding: 0.6rem 1rem;
+    padding: 10px 18px;
+    border-radius: 10px;
     text-decoration: none;
-    border-radius: var(--radius);
-    margin-bottom: 1rem;
-    transition: 0.2s;
+    font-weight: 500;
+    transition: 0.3s;
 }
 
 .detail-button:hover {
-    opacity: 0.85;
+    background: #3048d6;
 }
 
-/* ----------------------------------
-   PRODUCT DETAIL PAGE
----------------------------------- */
-.product-detail {
-    background: white;
-    box-shadow: var(--shadow);
-    border-radius: var(--radius);
-    padding: 2rem;
-    max-width: 700px;
-    margin: auto;
+/* ======================================
+   ANIMASI REVEAL
+====================================== */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease-out;
 }
 
-.detail-img {
-    width: 100%;
-    max-width: 450px;
-    display: block;
-    margin: auto;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0px);
 }
 
-.back-button {
-    display: inline-block;
-    background: var(--danger);
-    color: white;
-    padding: 0.7rem 1rem;
-    border-radius: var(--radius);
-    margin-top: 1rem;
-    text-decoration: none;
-}
+/* ======================================
+   FOOTER
+====================================== */
 
-/* ----------------------------------
-   ABOUT PAGE
----------------------------------- */
-.about {
+footer {
+    background: #1e1e2e;
+    padding: 35px 20px;
+    margin-top: 60px;
+    color: #fff;
     text-align: center;
+    font-size: 0.9rem;
 }
 
-.about-img {
-    width: 100%;
-    max-width: 450px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin: 1rem auto;
+footer p {
+    opacity: 0.8;
 }
 
-/* ----------------------------------
-   TESTIMONIALS
----------------------------------- */
-.testimonials {
-    max-width: 700px;
-    margin: auto;
-}
+/* ======================================
+   RESPONSIVE
+====================================== */
 
-form label {
-    font-weight: 600;
-    margin-bottom: 0.3rem;
-}
-
-form input,
-form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    border-radius: var(--radius);
-    border: 1px solid #ccc;
-    margin-bottom: 1rem;
-}
-
-form button {
-    background: var(--success);
-    color: white;
-    padding: 0.7rem 1rem;
-    border-radius: var(--radius);
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-}
-
-.testimonial-item {
-    background: white;
-    padding: 1rem;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin-top: 1rem;
-}
-
-/* ----------------------------------
-   ANIMASI GLOBAL
----------------------------------- */
-
-/* Fade naik halus */
-.fade-up {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeUp 0.8s ease forwards;
-}
-
-@keyframes fadeUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
+@media(max-width: 600px) {
+    nav ul {
+        gap: 15px;
     }
-}
 
-/* Fade kiri */
-.fade-left {
-    opacity: 0;
-    transform: translateX(-20px);
-    animation: fadeLeft 0.8s ease forwards;
-}
-
-@keyframes fadeLeft {
-    to {
-        opacity: 1;
-        transform: translateX(0);
+    .products h2 {
+        font-size: 1.7rem;
     }
-}
 
-/* Fade kanan */
-.fade-right {
-    opacity: 0;
-    transform: translateX(20px);
-    animation: fadeRight 0.8s ease forwards;
-}
-
-@keyframes fadeRight {
-    to {
-        opacity: 1;
-        transform: translateX(0);
+    .product-card {
+        padding: 18px;
     }
-}
-
-/* Hover card lift */
-.card-hover {
-    transition: 0.25s ease;
-}
-
-.card-hover:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 18px rgba(0,0,0,0.12);
-}
-
-/* Button hover smooth */
-.btn-animate {
-    transition: 0.25s ease;
-}
-
-.btn-animate:hover {
-    transform: translateY(-3px);
-    opacity: 0.9;
 }
