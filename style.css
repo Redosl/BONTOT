@@ -241,7 +241,7 @@ nav ul li a.active::after {
 }
 
 .product-card img {
-    width:100%;
+    width:80%;
     border-radius:15px;
     margin-bottom:15px;
     transition: transform 0.4s ease;
@@ -326,4 +326,5 @@ footer p:hover {
     .hero-subtitle { font-size:1.4rem; }
     .product-grid { grid-template-columns:1fr; padding:15px; }
 }
+
 
