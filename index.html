@@ -1,78 +1,57 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bontot - Kuliner Khas Banten</title>
-
-    <!-- FONT -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bontot - Makanan Khas Banten</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- ================= NAVBAR ================= -->
-    <header class="navbar">
-        <nav class="container nav-flex">
-
-            <!-- LANGUAGE SWITCH -->
-            <div class="lang-switch">
-                <button class="lang-btn active" data-lang="id">ID</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-            </div>
-
-            <!-- LOGO -->
-            <div class="logo">K2XI3</div>
-
-            <!-- NAVIGATION -->
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Beranda</a></li>
+    <header>
+        <nav>
+            <div class="logo"><strong> K2XI3 </strong></div>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
                 <li><a href="produk.html">Produk</a></li>
                 <li><a href="tentang.html">Tentang Kami</a></li>
             </ul>
         </nav>
     </header>
-
-    <!-- ================= HERO ================= -->
-    <section class="hero container">
-
-        <div class="hero-wrapper">
-            <div class="hero-text">
-                <h1 class="hero-decor">✧✦✧</h1>
-
-                <h1 class="hero-title">Bontot</h1>
-                <h2 class="hero-subtitle">Kuliner Tradisional Khas Banten</h2>
-
-                <h1 class="hero-decor">✦—————✦</h1>
-
-                <p class="description" data-text-id="desc">
-                    Bontot adalah makanan khas Banten berbahan ikan payus dengan tekstur kenyal,
-                    rasa gurih, dan aroma khas. Kami menghadirkan inovasi modern tanpa menghilangkan
-                    cita rasa autentiknya.
-                </p>
-
-                <a href="produk.html" class="cta-button" data-text-id="btn-produk">
-                    Lihat Produk
-                </a>
-            </div>
-
-            <div class="hero-image-box">
-                <img src="download.jpg" alt="Bontot" class="hero-img" />
-            </div>
-        </div>
-    </section>
-
-    <!-- ================= FOOTER ================= -->
+    <main>
+        <section class="hero">
+            <h1>  𓆩༺✧༻𓆪 </h1>
+            <h1>Bontot</h1>
+            <h1>Makanan Khas Banten</h1>
+            <h1>∘₊✧──────────✧₊∘</h1>
+            <img src="download.jpg" alt="Bontot" class="hero-img">
+            <p>Bontot adalah makanan khas Banten berbahan dasar ikan payus, punya tekstur kenyal dan rasa gurih yang bikin nagih. Di sini, kami mengenalkan kembali kuliner lokal yang mulai jarang ditemui dengan kemasan modern dan kualitas terjaga.</p>
+            <h2>------------------</h2>
+            <a href="produk.html" class="cta-button">Lihat Produk</a>
+            <h2>------------------</h2>
+        </section>
+    </main>
     <footer>
-        <p data-text-id="footer">
-            &copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN 1 Tangerang
-        </p>
+        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN1TRA </p>
     </footer>
-
-    <!-- SCRIPT -->
     <script src="script.js"></script>
-
 </body>
+
+    <!-- TARO YANG INI DI SINI -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const currentPage = window.location.pathname.split("/").pop(); 
+            const links = document.querySelectorAll("nav ul li a");
+
+            links.forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+    
+</body>
+</html>
+
 </html>
