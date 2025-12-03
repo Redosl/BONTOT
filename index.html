@@ -4,14 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bontot - Kuliner Khas Banten</title>
+
+    <!-- FONT -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+    <!-- ================= NAVBAR ================= -->
     <header class="navbar">
         <nav class="container nav-flex">
-            
-            <!-- LANGUAGE SWITCHER -->
+
+            <!-- LANGUAGE SWITCH -->
             <div class="lang-switch">
                 <button class="lang-btn active" data-lang="id">ID</button>
                 <button class="lang-btn" data-lang="en">EN</button>
@@ -20,7 +26,7 @@
             <!-- LOGO -->
             <div class="logo">K2XI3</div>
 
-            <!-- NAV LINKS -->
+            <!-- NAVIGATION -->
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Beranda</a></li>
                 <li><a href="produk.html">Produk</a></li>
@@ -29,29 +35,44 @@
         </nav>
     </header>
 
+    <!-- ================= HERO ================= -->
     <section class="hero container">
-        <div class="hero-content">
-            <h1 class="subdecor">✧✦✧</h1>
-            <h1 class="title">Bontot</h1>
-            <h2 class="subtitle">Makanan Khas Banten</h2>
-            <h1 class="subdecor">✦—————✦</h1>
 
-            <img src="download.jpg" alt="Bontot" class="hero-img" />
+        <div class="hero-wrapper">
+            <div class="hero-text">
+                <h1 class="hero-decor">✧✦✧</h1>
 
-            <p class="description" data-text-id="desc">
-                Bontot adalah makanan khas Banten berbahan dasar ikan payus dengan tekstur kenyal,
-                rasa gurih, dan aroma khas yang digemari banyak orang. Kami hadir untuk mengenalkan
-                kembali kuliner tradisional ini melalui kemasan modern dan cita rasa autentik.
-            </p>
+                <h1 class="hero-title">Bontot</h1>
+                <h2 class="hero-subtitle">Kuliner Tradisional Khas Banten</h2>
 
-            <a href="produk.html" class="cta-button" data-text-id="btn-produk">Lihat Produk</a>
+                <h1 class="hero-decor">✦—————✦</h1>
+
+                <p class="description" data-text-id="desc">
+                    Bontot adalah makanan khas Banten berbahan ikan payus dengan tekstur kenyal,
+                    rasa gurih, dan aroma khas. Kami menghadirkan inovasi modern tanpa menghilangkan
+                    cita rasa autentiknya.
+                </p>
+
+                <a href="produk.html" class="cta-button" data-text-id="btn-produk">
+                    Lihat Produk
+                </a>
+            </div>
+
+            <div class="hero-image-box">
+                <img src="download.jpg" alt="Bontot" class="hero-img" />
+            </div>
         </div>
     </section>
 
+    <!-- ================= FOOTER ================= -->
     <footer>
-        <p data-text-id="footer">&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN 1 Tangerang</p>
+        <p data-text-id="footer">
+            &copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN 1 Tangerang
+        </p>
     </footer>
 
+    <!-- SCRIPT -->
     <script src="script.js"></script>
+
 </body>
 </html>
