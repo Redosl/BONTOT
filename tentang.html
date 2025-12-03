@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <nav>
@@ -14,49 +15,36 @@
             <ul>
                 <li><a href="index.html">Beranda</a></li>
                 <li><a href="produk.html">Produk</a></li>
-                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="tentang.html" class="active">Tentang Kami</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="about">
-            <img src="kelompok.jpg" alt="Tim Kami" class="about-img">
+            <img src="kelompok.jpg" alt="Tim K2XI3" class="about-img">
 
             <h2>Tentang Kami</h2>
 
             <p>
-                Website ini dibuat sebagai proyek kokurikuler untuk mengangkat kembali kuliner khas Banten,
-                khususnya bontot, yang mulai jarang dikenal generasi muda. Kami ingin menunjukkan bahwa makanan
-                tradisional tetap relevan bila dikemas dengan cara yang modern.
+                Proyek ini merupakan bagian dari kegiatan kokurikuler yang berfokus pada pelestarian kuliner tradisional Banten,
+                khususnya <strong>bontot</strong>—makanan khas yang semakin jarang dikenal generasi muda. Melalui pendekatan modern,
+                kami berupaya memperkenalkan kembali kuliner lokal agar relevan dan dapat dinikmati oleh masyarakat luas.
             </p>
 
             <p>
-                Tujuan kami adalah melestarikan kuliner lokal sekaligus membantu UMKM berkembang lewat digital marketing.
-                Proyek ini menjadi ruang belajar untuk menggabungkan teknologi, kreativitas, dan kepedulian budaya agar
-                produk lokal bisa dikenal lebih luas.
+                Selain menjaga warisan budaya, kami juga ingin memberikan dampak nyata bagi UMKM dengan menghadirkan konsep digital
+                marketing sederhana namun efektif. Proyek ini menjadi wadah belajar bagi kami untuk menggabungkan teknologi,
+                kreativitas, serta nilai budaya dalam satu produk yang informatif dan fungsional.
             </p>
 
             <h3>Kontak</h3>
-            <p>WhatsApp: 0896-8824-7336</p>
+            <p>WhatsApp: <a href="https://wa.me/6289688247336" target="_blank">0896-8824-7336</a></p>
         </section>
     </main>
 
     <footer>
         <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN1TRA</p>
     </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const currentPage = window.location.pathname.split("/").pop();
-            const links = document.querySelectorAll("nav ul li a");
-
-            links.forEach(link => {
-                if (link.getAttribute("href") === currentPage) {
-                    link.classList.add("active");
-                }
-            });
-        });
-    </script>
 </body>
 </html>
