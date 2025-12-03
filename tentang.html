@@ -3,48 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang Kami</title>
+    <title>Tentang Kami - Bontot</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <nav>
-            <div class="logo"><strong>K2XI3</strong></div>
-            <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="produk.html">Produk</a></li>
-                <li><a href="tentang.html" class="active">Tentang Kami</a></li>
+    <header class="navbar">
+        <nav class="container nav-flex">
+
+            <!-- LANGUAGE SWITCH -->
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="id">ID</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+
+            <!-- LOGO -->
+            <div class="logo">K2XI3</div>
+
+            <!-- NAV LINKS -->
+            <ul class="nav-links">
+                <li><a href="index.html" data-text-id="nav-home">Beranda</a></li>
+                <li><a href="produk.html" data-text-id="nav-product">Produk</a></li>
+                <li><a href="tentang.html" class="active" data-text-id="nav-about">Tentang Kami</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="about">
-            <img src="kelompok.jpg" alt="Tim K2XI3" class="about-img">
+    <main class="container about">
 
-            <h2>Tentang Kami</h2>
+        <img src="kelompok.jpg" alt="Tim K2XI3" class="about-img">
 
-            <p>
-                Proyek ini merupakan bagian dari kegiatan kokurikuler yang berfokus pada pelestarian kuliner tradisional Banten,
-                khususnya <strong>bontot</strong>—makanan khas yang semakin jarang dikenal generasi muda. Melalui pendekatan modern,
-                kami berupaya memperkenalkan kembali kuliner lokal agar relevan dan dapat dinikmati oleh masyarakat luas.
-            </p>
+        <h2 data-text-id="about-title">Tentang Kami</h2>
 
-            <p>
-                Selain menjaga warisan budaya, kami juga ingin memberikan dampak nyata bagi UMKM dengan menghadirkan konsep digital
-                marketing sederhana namun efektif. Proyek ini menjadi wadah belajar bagi kami untuk menggabungkan teknologi,
-                kreativitas, serta nilai budaya dalam satu produk yang informatif dan fungsional.
-            </p>
+        <p data-text-id="about-p1">
+            Proyek ini merupakan bagian dari kegiatan kokurikuler yang berfokus pada pelestarian kuliner tradisional Banten,
+            khususnya <strong>bontot</strong>—makanan khas yang semakin jarang dikenal generasi muda. Melalui pendekatan modern,
+            kami berupaya memperkenalkan kembali kuliner lokal agar relevan dan dapat dinikmati oleh masyarakat luas.
+        </p>
 
-            <h3>Kontak</h3>
-            <p>WhatsApp: <a href="https://wa.me/6289688247336" target="_blank">0896-8824-7336</a></p>
-        </section>
+        <p data-text-id="about-p2">
+            Selain menjaga warisan budaya, kami juga ingin memberikan dampak nyata bagi UMKM dengan menghadirkan konsep digital
+            marketing sederhana namun efektif. Proyek ini menjadi wadah belajar bagi kami untuk menggabungkan teknologi,
+            kreativitas, serta nilai budaya dalam satu produk yang informatif dan fungsional.
+        </p>
+
+        <h3 data-text-id="contact-title">Kontak</h3>
+        <p><span data-text-id="contact-wa">WhatsApp</span>: 
+            <a href="https://wa.me/6289688247336" target="_blank">0896-8824-7336</a>
+        </p>
+
     </main>
 
     <footer>
-        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN1TRA</p>
+        <p data-text-id="footer">&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN 1 Tangerang</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
