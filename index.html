@@ -9,8 +9,18 @@
 </head>
 <body>
     <header class="navbar">
-        <nav class="container">
+        <nav class="container nav-flex">
+            
+            <!-- LANGUAGE SWITCHER -->
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="id">ID</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+
+            <!-- LOGO -->
             <div class="logo">K2XI3</div>
+
+            <!-- NAV LINKS -->
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Beranda</a></li>
                 <li><a href="produk.html">Produk</a></li>
@@ -28,18 +38,18 @@
 
             <img src="download.jpg" alt="Bontot" class="hero-img" />
 
-            <p class="description">
+            <p class="description" data-text-id="desc">
                 Bontot adalah makanan khas Banten berbahan dasar ikan payus dengan tekstur kenyal,
                 rasa gurih, dan aroma khas yang digemari banyak orang. Kami hadir untuk mengenalkan
                 kembali kuliner tradisional ini melalui kemasan modern dan cita rasa autentik.
             </p>
 
-            <a href="produk.html" class="cta-button">Lihat Produk</a>
+            <a href="produk.html" class="cta-button" data-text-id="btn-produk">Lihat Produk</a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN 1 Tangerang</p>
+        <p data-text-id="footer">&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN 1 Tangerang</p>
     </footer>
 
     <script src="script.js"></script>
