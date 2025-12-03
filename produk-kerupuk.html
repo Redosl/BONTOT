@@ -9,12 +9,22 @@
 </head>
 <body>
     <header class="navbar">
-        <nav class="container">
+        <nav class="container nav-flex">
+            
+            <!-- Language Switcher -->
+            <div class="lang-switch">
+                <button class="lang-btn active" data-lang="id">ID</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+            </div>
+
+            <!-- Logo -->
             <div class="logo">K2XI3</div>
+
+            <!-- Nav links -->
             <ul class="nav-links">
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="produk.html" class="active">Produk</a></li>
-                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="index.html" data-text-id="nav-home">Beranda</a></li>
+                <li><a href="produk.html" class="active" data-text-id="nav-product">Produk</a></li>
+                <li><a href="tentang.html" data-text-id="nav-about">Tentang Kami</a></li>
             </ul>
         </nav>
     </header>
@@ -23,13 +33,13 @@
         <section class="product-detail">
             <img src="kerupuk.png" alt="Kerupuk Bontot" class="detail-img" />
 
-            <h1 class="detail-title">Kerupuk Bontot</h1>
-            <p class="detail-desc">
+            <h1 class="detail-title" data-text-id="kerupuk-title-detail">Kerupuk Bontot</h1>
+            <p class="detail-desc" data-text-id="kerupuk-desc-detail">
                 Kerupuk bontot merupakan camilan renyah khas Banten yang dibuat dari adonan bontot
                 yang dikeringkan lalu digoreng hingga mekar dan gurih.
             </p>
 
-            <h3>Komposisi</h3>
+            <h3 data-text-id="komposisi">Komposisi</h3>
             <ul>
                 <li>500 gr Tepung Tapioka</li>
                 <li>250 gr Daging Ikan Payus</li>
@@ -39,7 +49,7 @@
                 <li>Minyak Goreng</li>
             </ul>
 
-            <h3>Proses Pembuatan</h3>
+            <h3 data-text-id="proses">Proses Pembuatan</h3>
             <ol>
                 <li>Campurkan ikan giling, bawang putih, garam, dan penyedap.</li>
                 <li>Tambahkan tepung lalu tuang air panas sedikit demi sedikit sambil diuleni.</li>
@@ -50,24 +60,26 @@
                 <li>Goreng dalam minyak panas hingga mekar dan renyah.</li>
             </ol>
 
-            <h3>Informasi Gizi</h3>
+            <h3 data-text-id="gizi">Informasi Gizi</h3>
             <ul>
                 <li>Tinggi Lemak dan Kalori (digoreng)</li>
                 <li>Mengandung Protein dari Ikan</li>
             </ul>
 
-            <h3>Masa Simpan</h3>
+            <h3 data-text-id="masa-simpan">Masa Simpan</h3>
             <p>
                 Kerupuk matang dapat bertahan 1–3 bulan bila disimpan dalam wadah kedap udara.
                 Kerupuk mentah bisa bertahan lebih dari 6 bulan jika disimpan di tempat kering.
             </p>
 
-            <a href="produk.html" class="back-button">Kembali ke Produk</a>
+            <a href="produk.html" class="back-button" data-text-id="btn-back">Kembali ke Produk</a>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN 1 Tangerang</p>
+        <p data-text-id="footer">&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN 1 Tangerang</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
