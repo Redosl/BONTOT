@@ -10,7 +10,7 @@
 <body>
     <header>
         <nav>
-            <div class="logo"><strong> K2XI3 </strong></div>
+            <div class="logo"><strong>K2XI3</strong></div>
             <ul>
                 <li><a href="index.html">Beranda</a></li>
                 <li><a href="produk.html">Produk</a></li>
@@ -18,6 +18,7 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <section class="products">
             <h2>Produk Kami</h2>
@@ -28,6 +29,7 @@
                     <p>Bontot yang digoreng krispi, cocok banget buat jadi camilan sehari-hari.</p>
                     <a href="produk-goreng.html" class="detail-button">Lihat Detail</a>
                 </div>
+
                 <div class="product-card">
                     <img src="kerupuk.png" alt="Kerupuk Bontot">
                     <h3>Kerupuk Bontot</h3>
@@ -37,16 +39,17 @@
             </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN1TRA </p>
     </footer>
-    <script src="script.js"></script>
-</body>
 
-    <!-- TARO YANG INI DI SINI -->
+    <script src="script.js"></script>
+
+    <!-- SCRIPT HALAMAN AKTIF -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const currentPage = window.location.pathname.split("/").pop(); 
+            const currentPage = window.location.pathname.split("/").pop();
             const links = document.querySelectorAll("nav ul li a");
 
             links.forEach(link => {
@@ -57,5 +60,5 @@
         });
     </script>
 
-
+</body>
 </html>
