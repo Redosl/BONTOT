@@ -9,17 +9,32 @@
     text-align: center;
 }
 
+/* Dekorasi aman | tidak merusak layout */
+.hero .decor-top {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.hero .decor-bottom {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    display: block;
+}
+
 .hero h1 {
     font-size: 2.5rem;
     font-weight: 700;
     color: #3b5bff;
     margin-bottom: 10px;
+    word-break: break-word;
 }
 
 .hero h2 {
     font-size: 1.5rem;
     color: #444;
     margin-bottom: 20px;
+    word-break: break-word;
 }
 
 .hero-img {
@@ -57,6 +72,7 @@
 /* ======================================
    GLOBAL
 ====================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -131,7 +147,6 @@ main {
     margin-top: 120px;
 }
 
-/* SECTION TITLE */
 .products h2 {
     text-align: center;
     font-size: 2rem;
@@ -187,7 +202,6 @@ main {
     margin-bottom: 20px;
 }
 
-/* BUTTON */
 .detail-button {
     display: inline-block;
     background: #3b5bff;
@@ -206,6 +220,7 @@ main {
 /* ======================================
    ANIMASI REVEAL
 ====================================== */
+
 .reveal {
     opacity: 0;
     transform: translateY(30px);
@@ -250,5 +265,16 @@ footer p {
     .product-card {
         padding: 18px;
     }
-}
 
+    .hero-img {
+        width: 250px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h2 {
+        font-size: 1.2rem;
+    }
+}
