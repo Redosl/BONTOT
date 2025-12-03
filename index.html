@@ -13,7 +13,7 @@
         <nav>
             <div class="logo"><strong>K2XI3</strong></div>
             <ul>
-                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html" class="active">Beranda</a></li>
                 <li><a href="produk.html">Produk</a></li>
                 <li><a href="tentang.html">Tentang Kami</a></li>
             </ul>
@@ -22,10 +22,12 @@
 
     <main>
         <section class="hero">
-            <h1>𓆩༺✧༻𓆪</h1>
+            <h1 class="decor">✧✦✧</h1>
+
             <h1>Bontot</h1>
             <h2>Makanan Khas Banten</h2>
-            <h1>∘₊✧───────────✧₊∘</h1>
+
+            <h1 class="decor">✦—————✦</h1>
 
             <img src="download.jpg" alt="Bontot" class="hero-img">
 
@@ -36,11 +38,11 @@
                 dengan kemasan modern dan kualitas terjaga.
             </p>
 
-            <hr style="margin: 20px 0; border: none; border-top: 2px solid #ccc;">
+            <hr class="divider">
 
             <a href="produk.html" class="cta-button">Lihat Produk</a>
 
-            <hr style="margin: 20px 0; border: none; border-top: 2px solid #ccc;">
+            <hr class="divider">
         </section>
     </main>
 
@@ -49,19 +51,5 @@
     </footer>
 
     <script src="script.js"></script>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const currentPage = window.location.pathname.split("/").pop();
-            const links = document.querySelectorAll("nav ul li a");
-
-            links.forEach(link => {
-                if (link.getAttribute("href") === currentPage) {
-                    link.classList.add("active");
-                }
-            });
-        });
-    </script>
 </body>
 </html>
-
