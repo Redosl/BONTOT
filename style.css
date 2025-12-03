@@ -1,8 +1,6 @@
-
-
-/* ======================================
-   GLOBAL STYLE
-===================================== */
+/* ==============================
+   RESET DAN GLOBAL STYLES
+============================== */
 * {
     margin: 0;
     padding: 0;
@@ -18,17 +16,17 @@ body {
     scroll-behavior: smooth;
 }
 
-/* ======================================
-   NAVBAR
-===================================== */
+/* ==============================
+   HEADER (PREMIUM GLASS EFFECT)
+============================== */
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    background: rgba(255, 255, 255, 0.9); /* Soft white with glass effect */
+    backdrop-filter: blur(14px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.08);
     z-index: 999;
     transition: all 0.4s ease;
 }
@@ -45,8 +43,8 @@ nav {
 nav .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #3b5bff;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    color: #3b5bff; /* Blue pen color */
+    text-shadow: 0 3px 10px rgba(59, 91, 255, 0.2);
 }
 
 nav ul {
@@ -56,11 +54,11 @@ nav ul {
 }
 
 nav ul li a {
-    color: #333;
+    color: #3b5bff; /* Blue pen color */
     font-weight: 500;
     text-decoration: none;
     position: relative;
-    transition: 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 nav ul li a::after {
@@ -70,9 +68,14 @@ nav ul li a::after {
     height: 2px;
     bottom: -4px;
     left: 0;
-    background: #3b5bff;
+    background: linear-gradient(90deg, #3b5bff, #00cfff);
     border-radius: 2px;
     transition: width 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #00cfff;
 }
 
 nav ul li a:hover::after,
@@ -80,9 +83,9 @@ nav ul li a.active::after {
     width: 100%;
 }
 
-/* ======================================
+/* ==============================
    HERO SECTION
-===================================== */
+============================== */
 .hero {
     max-width: 900px;
     margin: 0 auto;
@@ -93,21 +96,21 @@ nav ul li a.active::after {
 }
 
 .hero::before {
-    content:'';
-    position:absolute;
-    top:-30%;
-    left:-30%;
-    width:160%;
-    height:160%;
-    background: radial-gradient(circle at 20% 20%, rgba(59,91,255,0.08), transparent 60%);
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+    background: radial-gradient(circle at 20% 20%, rgba(59, 91, 255, 0.08), transparent 60%);
     animation: heroBG 25s linear infinite;
-    z-index:-1;
+    z-index: -1;
 }
 
 @keyframes heroBG {
-    0% { transform: rotate(0deg) translate(0,0); }
-    50% { transform: rotate(180deg) translate(15px,15px); }
-    100% { transform: rotate(360deg) translate(0,0); }
+    0% { transform: rotate(0deg) translate(0, 0); }
+    50% { transform: rotate(180deg) translate(15px, 15px); }
+    100% { transform: rotate(360deg) translate(0, 0); }
 }
 
 .hero h1 {
@@ -145,20 +148,20 @@ nav ul li a.active::after {
     width: 340px;
     border-radius: 25px;
     margin: 25px 0;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .hero-img:hover {
     transform: scale(1.08);
-    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
 }
 
-/* CTA BUTTON */
+/* CTA BUTTON WITH RIPPLE EFFECT */
 .cta-button {
     display: inline-block;
     padding: 14px 28px;
-    background: linear-gradient(135deg,#3b5bff,#00cfff);
+    background: linear-gradient(135deg, #3b5bff, #00cfff);
     color: #fff;
     border-radius: 14px;
     font-weight: 600;
@@ -166,7 +169,7 @@ nav ul li a.active::after {
     text-decoration: none;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 8px 30px rgba(59,91,255,0.4);
+    box-shadow: 0 8px 30px rgba(59, 91, 255, 0.4);
     transition: all 0.4s ease;
 }
 
@@ -175,11 +178,11 @@ nav ul li a.active::after {
     position: absolute;
     width: 0;
     height: 0;
-    top: var(--mouse-y,50%);
-    left: var(--mouse-x,50%);
-    background: rgba(255,255,255,0.3);
-    transform: translate(-50%, -50%);
+    top: var(--mouse-y, 50%);
+    left: var(--mouse-x, 50%);
+    background: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
+    transform: translate(-50%, -50%);
     transition: width 0.5s ease, height 0.5s ease, opacity 0.8s ease;
     pointer-events: none;
 }
@@ -192,12 +195,12 @@ nav ul li a.active::after {
 
 .cta-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 18px 45px rgba(59,91,255,0.5);
+    box-shadow: 0 18px 45px rgba(59, 91, 255, 0.5);
 }
 
-/* ======================================
+/* ==============================
    PRODUCT GRID
-================================ */
+============================== */
 .product-grid {
     max-width: 1150px;
     margin: auto;
@@ -211,20 +214,20 @@ nav ul li a.active::after {
     background: #fff;
     padding: 25px;
     border-radius: 20px;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     position: relative;
     overflow: hidden;
 }
 
 .product-card::before {
-    content:'';
-    position:absolute;
-    top:-50%;
-    left:-50%;
-    width:200%;
-    height:200%;
-    background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, transparent 60%);
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(120deg, rgba(255, 255, 255, 0.2) 0%, transparent 60%);
     transform: rotate(25deg) translateX(-100%);
     transition: transform 0.8s ease;
 }
@@ -235,7 +238,7 @@ nav ul li a.active::after {
 
 .product-card:hover {
     transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 20px 55px rgba(0,0,0,0.15);
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.15);
 }
 
 .product-card img {
@@ -262,31 +265,30 @@ nav ul li a.active::after {
     margin-bottom: 20px;
 }
 
-/* DETAIL BUTTON */
 .detail-button {
     display: inline-block;
-    background: linear-gradient(135deg, #3b5bff,#00cfff);
+    background: linear-gradient(135deg, #3b5bff, #00cfff);
     color: white;
     padding: 12px 20px;
     border-radius: 12px;
     font-weight: 500;
     text-decoration: none;
     transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(59,91,255,0.35);
+    box-shadow: 0 8px 25px rgba(59, 91, 255, 0.35);
 }
 
 .detail-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 18px 45px rgba(59,91,255,0.5);
+    box-shadow: 0 18px 45px rgba(59, 91, 255, 0.5);
 }
 
-/* ======================================
-   SCROLL REVEAL
-================================ */
+/* ==============================
+   SCROLL REVEAL ANIMATIONS
+============================== */
 .reveal {
     opacity: 0;
     transform: translateY(30px);
-    transition: 0.8s ease-out;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
 .reveal.active {
@@ -294,17 +296,44 @@ nav ul li a.active::after {
     transform: translateY(0);
 }
 
-/* ======================================
-   FOOTER
-================================ */
+/* ==============================
+   FOOTER (PREMIUM GLASS EFFECT)
+============================== */
 footer {
-    background: rgba(255,255,255,0.85);
-    backdrop-filter: blur(12px);
-    box-shadow: inset 0 0 40px rgba(59,91,255,0.05);
-    padding: 35px 20px;
-    margin-top: 60px;
-    color: #333;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9); /* Soft white with glass effect */
+    backdrop-filter: blur(14px);
+    box-shadow: inset 0 0 45px rgba(59, 91, 255, 0.05);
+    padding: 40px 20px;
     text-align: center;
+    color: #3b5bff; /* Blue pen color */
+    font-weight: 500;
     font-size: 0.95rem;
+    position: relative;
+    margin-top: 60px;
 }
 
+footer p:hover {
+    color: #00cfff;
+    text-shadow: 0 0 10px rgba(59, 91, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* ==============================
+   RESPONSIVE DESIGN (OPTIONAL ENHANCEMENTS)
+============================== */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 15px;
+    }
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero h2 {
+        font-size: 1.4rem;
+    }
+    .product-grid {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+}
