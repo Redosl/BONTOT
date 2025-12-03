@@ -99,3 +99,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
+
+/* ======================================
+   ULTRA PREMIUM INTERACTIVE ANIMATIONS
+===================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* Button ripple effect */
+    const buttons = document.querySelectorAll(".cta-button, .detail-button, .back-button");
+    buttons.forEach(btn => {
+        btn.addEventListener("mousemove", (e)=>{
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            btn.style.setProperty("--mouse-x", `${x}px`);
+            btn.style.setProperty("--mouse-y", `${y}px`);
+        });
+    });
+
+    /* Reveal & stagger animation for product grid */
+    const productItems = document.querySelectorAll(".product-card");
+    productItems.forEach((item, i) => {
+        item.style.transitionDelay = `${i * 0.15}s`;
+    });
+
+    /* Smooth hero shimmer & background handled by CSS keyframes */
+});
