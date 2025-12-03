@@ -1,120 +1,59 @@
-// ======================================
-// INTERACTIVE JS - VERSI LENGKAP & DIPERBAIKI
-// ======================================
-
-// Wait until DOM loaded
 document.addEventListener("DOMContentLoaded", () => {
-
-    /* ===== Active nav link ===== */
-    const currentPage = window.location.pathname.split("/").pop(); 
-    const links = document.querySelectorAll("nav ul li a");
-    links.forEach(link => {
-        if (link.getAttribute("href") === currentPage) {
-            link.classList.add("active");
-        }
+    // ===== ACTIVE NAV LINK =====
+    const page = window.location.pathname.split("/").pop();
+    document.querySelectorAll("nav ul li a").forEach(a => {
+        if(a.getAttribute("href") === page) a.classList.add("active");
     });
 
-    /* ===== Scroll Reveal Animations (dengan Intersection Observer) ===== */
-    const revealElements = document.querySelectorAll(".hero, .products, .product-detail, .about, .testimonial-item, .product-card");
+    // ===== HEADER SHRINK ON SCROLL =====
+    const header = document.querySelector("header");
+    window.addEventListener("scroll", () => {
+        header.classList.toggle("shrink", window.scrollY > 50);
+        // ===== BACK TO TOP =====
+        const backTop = document.getElementById("backTop");
+        if(window.scrollY > 300){
+            backTop.style.opacity = "1"; backTop.style.pointerEvents = "auto";
+        } else { backTop.style.opacity = "0"; backTop.style.pointerEvents = "none"; }
+    });
 
-    const observerOptions = {
-        threshold: 0.1
-    };
+    // ===== BACK TO TOP BUTTON =====
+    const backTopBtn = document.createElement("button");
+    backTopBtn.id = "backTop"; backTopBtn.textContent = "↑";
+    Object.assign(backTopBtn.style, {
+        position:"fixed", right:"20px", bottom:"20px", width:"45px", height:"45px",
+        borderRadius:"50%", border:"none",
+        background:"linear-gradient(135deg,#ff695e,#ff4500)", color:"#fff",
+        cursor:"pointer", fontSize:"1.5rem", boxShadow:"0 6px 15px rgba(255,105,94,0.4)",
+        opacity:"0", pointerEvents:"none", transition:"all 0.3s ease", zIndex:"999"
+    });
+    backTopBtn.addEventListener("click", ()=>window.scrollTo({top:0, behavior:"smooth"}));
+    document.body.appendChild(backTopBtn);
 
-    // Fallback untuk browser lama yang tidak support Intersection Observer
-    if ('IntersectionObserver' in window) {
-        const revealObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("reveal-active"); // Pastikan cocok dengan CSS .reveal.active
+    // ===== CTA BUTTON RIPPLE =====
+    document.querySelectorAll(".cta-button, .detail-button").forEach(btn=>{
+        btn.addEventListener("mousemove", e=>{
+            const rect = btn.getBoundingClientRect();
+            btn.style.setProperty("--mouse-x", `${e.clientX-rect.left}px`);
+            btn.style.setProperty("--mouse-y", `${e.clientY-rect.top}px`);
+        });
+    });
+
+    // ===== SCROLL REVEAL =====
+    const revealEls = document.querySelectorAll(".hero, .product-card");
+    if('IntersectionObserver' in window){
+        const obs = new IntersectionObserver((entries, observer)=>{
+            entries.forEach(entry=>{
+                if(entry.isIntersecting){
+                    entry.target.classList.add("active");
                     observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
+        revealEls.forEach(el=> { el.classList.add("reveal"); obs.observe(el); });
+    } else { revealEls.forEach(el=>el.classList.add("active")); }
 
-        revealElements.forEach(el => {
-            el.classList.add("reveal"); // Tambah class reveal jika belum ada
-            revealObserver.observe(el);
-        });
-    } else {
-        // Fallback: Reveal semua elemen langsung
-        revealElements.forEach(el => {
-            el.classList.add("reveal-active");
-        });
-    }
-
-    /* ===== Header shrink on scroll ===== */
-    const header = document.querySelector("header");
-    if (header) {
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 50) {
-                header.style.padding = "0.6rem 2rem";
-                header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.2)";
-            } else {
-                header.style.padding = "1rem 2rem";
-                header.style.boxShadow = "0 2px 12px rgba(0,0,0,0.12)";
-            }
-        });
-    }
-
-    /* ===== Button hover micro-interactions (ripple effect) ===== */
-    const buttons = document.querySelectorAll(".cta-button, .detail-button, .back-button");
-    buttons.forEach(btn => {
-        btn.addEventListener("mousemove", (e) => {
-            const rect = btn.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            btn.style.setProperty("--mouse-x", `${x}px`);
-            btn.style.setProperty("--mouse-y", `${y}px`);
-        });
+    // ===== STAGGER PRODUCT CARD =====
+    document.querySelectorAll(".product-card").forEach((card,i)=>{
+        card.style.transitionDelay = `${i*0.15}s`;
     });
-
-    /* ===== Back-to-top button ===== */
-    const backTopBtn = document.createElement("button");
-    backTopBtn.textContent = "↑";
-    backTopBtn.id = "backTop";
-    document.body.appendChild(backTopBtn);
-
-    backTopBtn.style.cssText = `
-        position: fixed;
-        right: 20px;
-        bottom: 20px;
-        background: linear-gradient(135deg, #ff695e, #ff4500); /* Warna oranye untuk aksen kuliner */
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 45px;
-        height: 45px;
-        font-size: 1.5rem;
-        cursor: pointer;
-        box-shadow: 0 6px 15px rgba(255,105,94,0.4);
-        opacity: 0;
-        pointer-events: none;
-        transition: all 0.3s ease;
-        z-index: 999;
-    `;
-
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 300) {
-            backTopBtn.style.opacity = "1";
-            backTopBtn.style.pointerEvents = "auto";
-        } else {
-            backTopBtn.style.opacity = "0";
-            backTopBtn.style.pointerEvents = "none";
-        }
-    });
-
-    backTopBtn.addEventListener("click", () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    /* ===== Reveal & stagger animation for product grid ===== */
-    const productItems = document.querySelectorAll(".product-card");
-    productItems.forEach((item, i) => {
-        item.style.transitionDelay = `${i * 0.15}s`; // Stagger effect untuk grid produk
-    });
-
-    /* ===== Smooth hero shimmer & background handled by CSS keyframes ===== */
-    // Tidak perlu JS tambahan, sudah ditangani oleh CSS (shimmer dan heroBG)
-
 });
