@@ -1,90 +1,73 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Detail Bontot Goreng</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <header>
-        <nav>
-            <div class="logo"><strong>K2XI3</strong></div>
-            <ul>
+    <header class="navbar">
+        <nav class="container">
+            <div class="logo">K2XI3</div>
+            <ul class="nav-links">
                 <li><a href="index.html">Beranda</a></li>
-                <li><a href="produk.html">Produk</a></li>
+                <li><a href="produk.html" class="active">Produk</a></li>
                 <li><a href="tentang.html">Tentang Kami</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="container">
         <section class="product-detail">
-            
-            <img src="bonreng.png" alt="Bontot Goreng" class="detail-img">
+            <img src="bonreng.png" alt="Bontot Goreng" class="detail-img" />
 
-            <h1><strong>Bontot Goreng</strong></h1>
-            <p>Bontot goreng adalah varian bontot yang digoreng hingga renyah, memberikan tekstur yang unik dan rasa gurih.</p>
+            <h1 class="detail-title">Bontot Goreng</h1>
+            <p class="detail-desc">
+                Bontot goreng adalah varian bontot yang digoreng hingga renyah, menghadirkan tekstur
+                unik dan cita rasa gurih khas Banten.
+            </p>
 
-            <h3>Bahan-Bahan</h3>
+            <h3>Komposisi</h3>
             <ul>
-                <li>500 gr Tepung Tapioka (Tepung Kanji)</li>
+                <li>500 gr Tepung Tapioka</li>
                 <li>250 gr Daging Ikan Payus</li>
-                <li>200 ml Air panas</li>
-                <li>2-3 siung Bawang Putih (dihaluskan)</li>
-                <li>1 sdt Penyedap Rasa/Kaldu Bubuk</li>
-                <li>Minyak goreng</li>
+                <li>200 ml Air Panas</li>
+                <li>2–3 siung Bawang Putih (dihaluskan)</li>
+                <li>1 sdt Penyedap/Kaldu Bubuk</li>
+                <li>Minyak Goreng</li>
             </ul>
-
-            <hr>
 
             <h3>Cara Pembuatan</h3>
             <ol>
-                <li>Campurkan daging ikan giling, bawang putih, garam, dan penyedap rasa.</li>
-                <li>Masukkan tepung tapioka, tuang air panas sedikit demi sedikit sambil diuleni.</li>
-                <li>Bentuk silinder dan kukus 20–30 menit.</li>
-                <li>Dinginkan dan simpan di kulkas semalam.</li>
-                <li>Iris tipis-tipis.</li>
-                <li>Goreng dengan minyak panas banyak.</li>
-                <li>Tiriskan dan simpan di wadah kedap udara.</li>
+                <li>Campurkan ikan giling, bawang putih, garam, dan penyedap.</li>
+                <li>Masukkan tepung, tambahkan air panas sedikit demi sedikit sambil diuleni.</li>
+                <li>Bentuk silinder, kukus 20–30 menit.</li>
+                <li>Dinginkan dan simpan di kulkas semalaman.</li>
+                <li>Iris tipis sesuai selera.</li>
+                <li>Goreng dengan minyak panas hingga berwarna keemasan.</li>
             </ol>
 
-            <hr>
-
-            <h3>Info Gizi</h3>
+            <h3>Informasi Gizi</h3>
             <ul>
-                <li>Tinggi Karbohidrat (tepung tapioka)</li>
-                <li>Sumber Protein (ikan)</li>
-                <li>Tinggi Kalori karena proses penggorengan</li>
+                <li>Sumber Karbohidrat (Tapioka)</li>
+                <li>Sumber Protein (Ikan)</li>
+                <li>Tinggi Kalori (Proses Penggorengan)</li>
             </ul>
 
-            <hr>
-
-            <h3>Kadaluarsa</h3>
-            <p>Bontot goreng terbaik dikonsumsi dalam 1–2 hari. Dalam wadah kedap udara, bisa bertahan hingga 3 hari.</p>
+            <h3>Masa Simpan</h3>
+            <p>
+                Bontot goreng paling baik dikonsumsi dalam 1–2 hari. Jika disimpan dalam wadah kedap
+                udara, dapat bertahan hingga 3 hari.
+            </p>
 
             <a href="produk.html" class="back-button">Kembali ke Produk</a>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN1TRA</p>
+        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN 1 Tangerang</p>
     </footer>
-
-    <script src="script.js"></script>
-
-    <!-- Script highlight nav -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const currentPage = window.location.pathname.split("/").pop(); 
-            document.querySelectorAll("nav ul li a").forEach(link => {
-                if (link.getAttribute("href") === currentPage) {
-                    link.classList.add("active");
-                }
-            });
-        });
-    </script>
 </body>
 </html>
