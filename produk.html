@@ -1,53 +1,61 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produk Bontot</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="navbar">
-        <nav class="container nav-flex">
-            <div class="lang-switch">
-                <button class="lang-btn active" data-lang="id">ID</button>
-                <button class="lang-btn" data-lang="en">EN</button>
-            </div>
-            <div class="logo">K2XI3</div>
-            <ul class="nav-links">
-                <li><a href="index.html" data-text-id="nav-home">Beranda</a></li>
-                <li><a href="produk.html" class="active" data-text-id="nav-product">Produk</a></li>
-                <li><a href="tentang.html" data-text-id="nav-about">Tentang Kami</a></li>
+    <header>
+        <nav>
+            <div class="logo"><strong> K2XI3 </strong></div>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="produk.html">Produk</a></li>
+                <li><a href="tentang.html">Tentang Kami</a></li>
             </ul>
         </nav>
     </header>
-
-    <main class="container">
+    <main>
         <section class="products">
-            <h2 class="section-title" data-text-id="produk-title">Produk Kami</h2>
-
+            <h2>Produk Kami</h2>
             <div class="product-grid">
                 <div class="product-card">
-                    <img src="bonreng.png" alt="Bontot Goreng" class="product-img" />
-                    <h3 data-text-id="goreng-title">Bontot Goreng</h3>
-                    <p data-text-id="goreng-desc">Bontot goreng renyah dengan cita rasa gurih khas Banten. Cocok untuk camilan maupun lauk pendamping.</p>
-                    <a href="produk-goreng.html" class="detail-button" data-text-id="btn-detail">Lihat Detail</a>
+                    <img src="bonreng.png" alt="Bontot Goreng">
+                    <h3>Bontot Goreng</h3>
+                    <p>Bontot yang digoreng krispi, cocok banget buat jadi camilan sehari-hari.</p>
+                    <a href="produk-goreng.html" class="detail-button">Lihat Detail</a>
                 </div>
-
                 <div class="product-card">
-                    <img src="kerupuk.png" alt="Kerupuk Bontot" class="product-img" />
-                    <h3 data-text-id="kerupuk-title">Kerupuk Bontot</h3>
-                    <p data-text-id="kerupuk-desc">Kerupuk gurih berbahan dasar bontot pilihan, cocok dimakan langsung atau sebagai pelengkap makanan.</p>
-                    <a href="produk-kerupuk.html" class="detail-button" data-text-id="btn-detail">Lihat Detail</a>
+                    <img src="kerupuk.png" alt="Kerupuk Bontot">
+                    <h3>Kerupuk Bontot</h3>
+                    <p>Kerupuk gurih dari bahan bontot, cocok banget buat dijadiin lauk!</p>
+                    <a href="produk-kerupuk.html" class="detail-button">Lihat Detail</a>
                 </div>
             </div>
         </section>
     </main>
-
     <footer>
-        <p data-text-id="footer">&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN 1 Tangerang</p>
+        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN1TRA </p>
     </footer>
-
     <script src="script.js"></script>
-</b
+</body>
+
+    <!-- TARO YANG INI DI SINI -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const currentPage = window.location.pathname.split("/").pop(); 
+            const links = document.querySelectorAll("nav ul li a");
+
+            links.forEach(link => {
+                if (link.getAttribute("href") === currentPage) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+
+
+</html>
