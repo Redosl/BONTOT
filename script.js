@@ -1,15 +1,18 @@
+// Reveal elements using Intersection Observer (Modern & High Performance)
 const revealElements = document.querySelectorAll('.reveal');
 
-function reveal() {
-    revealElements.forEach(el => {
-        const top = el.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
+const observerOptions = {
+    threshold: 0.2, // elemen terlihat 20% langsung muncul
+};
 
-        if (top < windowHeight - 80) {
-            el.classList.add('active');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target); // stop observing after reveal
         }
     });
-}
+}, observerOptions);
 
-window.addEventListener('scroll', reveal);
-reveal();
+// observe each element
+revealElements.forEach(el => observer.observe(el));
