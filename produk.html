@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Produk Bontot</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-    <header>
-        <nav>
-            <div class="logo"><strong>K2XI3</strong></div>
-            <ul>
+    <header class="navbar">
+        <nav class="container">
+            <div class="logo">K2XI3</div>
+            <ul class="nav-links">
                 <li><a href="index.html">Beranda</a></li>
-                <li><a href="produk.html">Produk</a></li>
+                <li><a href="produk.html" class="active">Produk</a></li>
                 <li><a href="tentang.html">Tentang Kami</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <main class="container">
         <section class="products">
-            <h2>Produk Kami</h2>
+            <h2 class="section-title">Produk Kami</h2>
 
             <div class="product-grid">
-                <div class="product-card reveal">
-                    <img src="bonreng.png" alt="Bontot Goreng">
+                <div class="product-card">
+                    <img src="bonreng.png" alt="Bontot Goreng" />
                     <h3>Bontot Goreng</h3>
-                    <p>Bontot yang digoreng krispi, cocok banget buat jadi camilan sehari-hari.</p>
+                    <p>
+                        Bontot goreng renyah dengan cita rasa gurih khas Banten. Cocok untuk
+                        camilan maupun lauk pendamping.
+                    </p>
                     <a href="produk-goreng.html" class="detail-button">Lihat Detail</a>
                 </div>
 
-                <div class="product-card reveal">
-                    <img src="kerupuk.png" alt="Kerupuk Bontot">
+                <div class="product-card">
+                    <img src="kerupuk.png" alt="Kerupuk Bontot" />
                     <h3>Kerupuk Bontot</h3>
-                    <p>Kerupuk gurih dari bahan bontot, cocok banget buat dijadiin lauk!</p>
+                    <p>
+                        Kerupuk gurih berbahan dasar bontot pilihan, cocok dimakan langsung
+                        atau sebagai pelengkap makanan.
+                    </p>
                     <a href="produk-kerupuk.html" class="detail-button">Lihat Detail</a>
                 </div>
             </div>
@@ -43,23 +48,9 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN1TRA</p>
+        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | Sman 1 Tangerang</p>
     </footer>
 
     <script src="script.js"></script>
-
-    <!-- Script penanda halaman aktif -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const currentPage = window.location.pathname.split("/").pop(); 
-            document.querySelectorAll("nav ul li a").forEach(link => {
-                if (link.getAttribute("href") === currentPage) {
-                    link.classList.add("active");
-                }
-            });
-        });
-    </script>
 </body>
 </html>
-
-
