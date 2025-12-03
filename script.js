@@ -1,5 +1,5 @@
 // ======================================
-// INTERACTIVE JS
+// INTERACTIVE JS - VERSI LENGKAP & DIPERBAIKI
 // ======================================
 
 // Wait until DOM loaded
@@ -14,43 +14,53 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    /* ===== Scroll Reveal Animations ===== */
-    const revealElements = document.querySelectorAll(".hero, .products, .product-detail, .about, .testimonial-item");
+    /* ===== Scroll Reveal Animations (dengan Intersection Observer) ===== */
+    const revealElements = document.querySelectorAll(".hero, .products, .product-detail, .about, .testimonial-item, .product-card");
 
     const observerOptions = {
         threshold: 0.1
     };
 
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if(entry.isIntersecting){
-                entry.target.classList.add("reveal-active");
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
+    // Fallback untuk browser lama yang tidak support Intersection Observer
+    if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("reveal-active"); // Pastikan cocok dengan CSS .reveal.active
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
 
-    revealElements.forEach(el => {
-        el.classList.add("reveal");
-        revealObserver.observe(el);
-    });
+        revealElements.forEach(el => {
+            el.classList.add("reveal"); // Tambah class reveal jika belum ada
+            revealObserver.observe(el);
+        });
+    } else {
+        // Fallback: Reveal semua elemen langsung
+        revealElements.forEach(el => {
+            el.classList.add("reveal-active");
+        });
+    }
 
     /* ===== Header shrink on scroll ===== */
     const header = document.querySelector("header");
-    window.addEventListener("scroll", () => {
-        if(window.scrollY > 50){
-            header.style.padding = "0.6rem 2rem";
-            header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.2)";
-        } else {
-            header.style.padding = "1rem 2rem";
-            header.style.boxShadow = "0 2px 12px rgba(0,0,0,0.12)";
-        }
-    });
+    if (header) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                header.style.padding = "0.6rem 2rem";
+                header.style.boxShadow = "0 4px 15px rgba(0,0,0,0.2)";
+            } else {
+                header.style.padding = "1rem 2rem";
+                header.style.boxShadow = "0 2px 12px rgba(0,0,0,0.12)";
+            }
+        });
+    }
 
-    /* ===== Button hover micro-interactions ===== */
+    /* ===== Button hover micro-interactions (ripple effect) ===== */
     const buttons = document.querySelectorAll(".cta-button, .detail-button, .back-button");
     buttons.forEach(btn => {
-        btn.addEventListener("mousemove", (e)=>{
+        btn.addEventListener("mousemove", (e) => {
             const rect = btn.getBoundingClientRect();
             const x = e.clientX - rect.left;
             const y = e.clientY - rect.top;
@@ -69,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         position: fixed;
         right: 20px;
         bottom: 20px;
-        background: linear-gradient(135deg, #ff695e, #ff4500);
+        background: linear-gradient(135deg, #ff695e, #ff4500); /* Warna oranye untuk aksen kuliner */
         color: white;
         border: none;
         border-radius: 50%;
@@ -85,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     `;
 
     window.addEventListener("scroll", () => {
-        if(window.scrollY > 300){
+        if (window.scrollY > 300) {
             backTopBtn.style.opacity = "1";
             backTopBtn.style.pointerEvents = "auto";
         } else {
@@ -98,31 +108,13 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-});
-
-/* ======================================
-   ULTRA PREMIUM INTERACTIVE ANIMATIONS
-===================================== */
-
-document.addEventListener("DOMContentLoaded", () => {
-
-    /* Button ripple effect */
-    const buttons = document.querySelectorAll(".cta-button, .detail-button, .back-button");
-    buttons.forEach(btn => {
-        btn.addEventListener("mousemove", (e)=>{
-            const rect = btn.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            btn.style.setProperty("--mouse-x", `${x}px`);
-            btn.style.setProperty("--mouse-y", `${y}px`);
-        });
-    });
-
-    /* Reveal & stagger animation for product grid */
+    /* ===== Reveal & stagger animation for product grid ===== */
     const productItems = document.querySelectorAll(".product-card");
     productItems.forEach((item, i) => {
-        item.style.transitionDelay = `${i * 0.15}s`;
+        item.style.transitionDelay = `${i * 0.15}s`; // Stagger effect untuk grid produk
     });
 
-    /* Smooth hero shimmer & background handled by CSS keyframes */
+    /* ===== Smooth hero shimmer & background handled by CSS keyframes ===== */
+    // Tidak perlu JS tambahan, sudah ditangani oleh CSS (shimmer dan heroBG)
+
 });
