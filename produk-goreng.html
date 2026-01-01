@@ -8,27 +8,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header>
-        <nav>
-            <div class="logo"><strong>K2XI3</strong></div>
-            <ul>
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">K2XI3</div>
+            <ul class="nav-links">
                 <li><a href="index.html">Beranda</a></li>
                 <li><a href="produk.html">Produk</a></li>
                 <li><a href="tentang.html">Tentang Kami</a></li>
             </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section class="product-detail">
+        <section class="product-detail reveal">
             <img src="bonreng.png" alt="Bontot Goreng" class="detail-img">
-
             <h1><strong>Bontot Goreng</strong></h1>
             <p>Bontot goreng adalah varian bontot yang digoreng hingga renyah, memberikan tekstur yang unik dan rasa gurih.</p>
-
             <hr>
-
             <h3>Bahan-Bahan</h3>
             <ul>
                 <li>500 gr Tepung Tapioka</li>
@@ -38,9 +39,7 @@
                 <li>1 sdt Penyedap rasa / Kaldu bubuk</li>
                 <li>Minyak goreng</li>
             </ul>
-
             <hr>
-
             <h3>Cara Pembuatan</h3>
             <ol>
                 <li>Campurkan daging ikan giling, bawang putih, garam, dan penyedap. Aduk rata.</li>
@@ -52,46 +51,25 @@
                 <li>Goreng irisan bontot hingga mengembang dan renyah.</li>
                 <li>Tiriskan dan simpan di wadah kedap udara.</li>
             </ol>
-
             <hr>
-
             <h3>Info Gizi</h3>
             <ul>
                 <li><strong>Tinggi Karbohidrat:</strong> dari tepung tapioka</li>
                 <li><strong>Sumber Protein:</strong> dari daging ikan</li>
                 <li><strong>Tinggi Lemak:</strong> meningkat setelah proses penggorengan</li>
             </ul>
-
             <hr>
-
             <h3>Kadaluarsa</h3>
             <p>Bontot goreng paling baik dikonsumsi dalam 1–2 hari. Jika disimpan dalam wadah kedap udara, dapat bertahan hingga 3 hari.</p>
-
             <hr>
-
             <a href="produk.html" class="back-button">← Kembali ke Produk</a>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN1TRA</p>
     </footer>
 
     <script src="script.js"></script>
-
-    <!-- SCRIPT HALAMAN AKTIF -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const currentPage = window.location.pathname.split("/").pop();
-            const links = document.querySelectorAll("nav ul li a");
-
-            links.forEach(link => {
-                if (link.getAttribute("href") === currentPage) {
-                    link.classList.add("active");
-                }
-            });
-        });
-    </script>
-
 </body>
 </html>
