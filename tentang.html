@@ -8,56 +8,39 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <header>
-        <nav>
-            <div class="logo"><strong>K2XI3</strong></div>
-            <ul>
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">K2XI3</div>
+            <ul class="nav-links">
                 <li><a href="index.html">Beranda</a></li>
                 <li><a href="produk.html">Produk</a></li>
-                <li><a href="tentang.html">Tentang Kami</a></li>
+                <li><a href="tentang.html" class="active">Tentang Kami</a></li>
             </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section class="about">
+        <section class="about reveal">
             <img src="kelompok.jpg" alt="Tim Kami" class="about-img">
-
             <h1>Tentang Kami</h1>
-
             <p>Website ini dibuat sebagai proyek kokurikuler untuk mengangkat kembali kuliner khas Banten, khususnya bontot, yang mulai jarang dikenal generasi muda. Kami ingin menunjukkan bahwa makanan tradisional tetap relevan bila dikemas dengan cara yang modern.</p>
-
             <hr>
-
             <p>Tujuan kami adalah melestarikan kuliner lokal sekaligus membantu UMKM berkembang lewat digital marketing. Proyek ini menjadi ruang belajar untuk menggabungkan teknologi, kreativitas, dan kepedulian budaya agar produk lokal bisa dikenal lebih luas.</p>
-
             <hr>
-
             <h2>Kontak</h2>
             <p>0896-8824-7336 (WhatsApp)</p>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN1TRA</p>
     </footer>
 
     <script src="script.js"></script>
-
-    <!-- Script Halaman Aktif -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const currentPage = window.location.pathname.split("/").pop();
-            const links = document.querySelectorAll("nav ul li a");
-
-            links.forEach(link => {
-                if (link.getAttribute("href") === currentPage) {
-                    link.classList.add("active");
-                }
-            });
-        });
-    </script>
-
 </body>
 </html>
