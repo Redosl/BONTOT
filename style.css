@@ -512,3 +512,13 @@ body {
         font-size: 0.9rem;
     }
 }
+
+.wa-link {
+  color: #25D366;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.wa-link:hover {
+  text-decoration: underline;
+}
