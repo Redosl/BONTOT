@@ -8,19 +8,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo"><strong>K2XI3</strong></div>
-            <ul>
+    <header class="header">
+        <nav class="nav container">
+            <div class="logo">K2XI3</div>
+            <ul class="nav-links">
                 <li><a href="index.html">Beranda</a></li>
-                <li><a href="produk.html">Produk</a></li>
+                <li><a href="produk.html" class="active">Produk</a></li>
                 <li><a href="tentang.html">Tentang Kami</a></li>
             </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section class="products">
+        <section class="products reveal">
             <h2>Produk Kami</h2>
             <div class="product-grid">
                 <div class="product-card">
@@ -29,7 +34,6 @@
                     <p>Bontot yang digoreng krispi, cocok banget buat jadi camilan sehari-hari.</p>
                     <a href="produk-goreng.html" class="detail-button">Lihat Detail</a>
                 </div>
-
                 <div class="product-card">
                     <img src="kerupuk.png" alt="Kerupuk Bontot">
                     <h3>Kerupuk Bontot</h3>
@@ -40,25 +44,10 @@
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN1TRA </p>
+    <footer class="footer">
+        <p>&copy; 2025 Kokurikuler Bontot | K2XI3 | SMAN1TRA</p>
     </footer>
 
     <script src="script.js"></script>
-
-    <!-- SCRIPT HALAMAN AKTIF -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const currentPage = window.location.pathname.split("/").pop();
-            const links = document.querySelectorAll("nav ul li a");
-
-            links.forEach(link => {
-                if (link.getAttribute("href") === currentPage) {
-                    link.classList.add("active");
-                }
-            });
-        });
-    </script>
-
 </body>
 </html>
