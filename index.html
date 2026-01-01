@@ -4,16 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bontot - Makanan Khas Banten</title>
-
     <!-- Font Premium -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-
     <!-- ===================== NAVBAR ===================== -->
     <header class="header">
         <nav class="nav container">
@@ -23,6 +19,11 @@
                 <li><a href="produk.html">Produk</a></li>
                 <li><a href="tentang.html">Tentang Kami</a></li>
             </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </nav>
     </header>
 
@@ -30,27 +31,19 @@
     <main>
         <section class="hero reveal">
             <div class="hero-inner">
-
                 <h1 class="symbol">𓆩༺✧༻𓆪</h1>
-
                 <h1 class="hero-title">Bontot</h1>
                 <h2 class="hero-subtitle">Makanan Khas Banten</h2>
-
                 <span class="divider"></span>
-
                 <img src="download.jpg" alt="Bontot" class="hero-img">
-
                 <p class="hero-desc">
                     Bontot adalah makanan khas Banten berbahan dasar ikan payus, 
                     punya tekstur kenyal dan rasa gurih yang bikin nagih. 
                     Di sini kami mengenalkan kembali kuliner lokal yang mulai jarang ditemui 
                     dengan kemasan modern dan kualitas terjaga.
                 </p>
-
                 <a href="produk.html" class="cta-button">Lihat Produk</a>
-
                 <span class="divider"></span>
-
             </div>
         </section>
     </main>
@@ -62,18 +55,5 @@
 
     <!-- ===================== JS ===================== -->
     <script src="script.js"></script>
-
-    <!-- Active menu highlight -->
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const current = window.location.pathname.split("/").pop();
-            document.querySelectorAll("nav a").forEach(a => {
-                if (a.getAttribute("href") === current) {
-                    a.classList.add("active");
-                }
-            });
-        });
-    </script>
-
 </body>
 </html>
